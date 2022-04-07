@@ -32,7 +32,7 @@ app.use('/', async (req, res, next) => {
       left: '1cm'
     }
   };
-  const c = generateStyledNPE(
+  const content = generateStyledNPE(
     NAME,
     USERNAME,
     NUM,
@@ -47,7 +47,6 @@ app.use('/', async (req, res, next) => {
     STATUS,
     AMOUNT
   );
-  const content = app.render(c);
   const pdfDoc = await html_to_pdf.generatePdf(
     {
       content
